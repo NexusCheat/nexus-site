@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-nexus-blue: #21379C;
+  --color-nexus-cyan: #21D8C4;
+  --color-nexus-dark: #0a0a0f;
+  --color-nexus-card: #12121a;
+  --color-nexus-border: #1e1e2e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0a0a0f;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #21379C, #21D8C4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(33, 216, 196, 0.15), inset 0 0 20px rgba(33, 216, 196, 0.05);
+}
+
+.hero-glow {
+  background: radial-gradient(ellipse at center, rgba(33, 55, 156, 0.15) 0%, transparent 70%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(33, 216, 196, 0.12);
+  border-color: rgba(33, 216, 196, 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(33, 216, 196, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(33, 216, 196, 0.4); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
