@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://nexus-site.vercel.app";
+const SITE_URL = "https://nexus-public-site.vercel.app";
 
 export const metadata: Metadata = {
   title: "Nexus Cheat | CS2 External ESP & Aimbot",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     siteName: "Nexus Cheat",
     images: [
       {
-        url: "/og.png",
-        width: 512,
-        height: 512,
+        url: `${SITE_URL}/og.png`,
+        width: 1408,
+        height: 768,
         alt: "Nexus Cheat",
         type: "image/png",
       },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Nexus Cheat | CS2 External ESP & Aimbot",
     description:
       "Advanced CS2 external cheat with ESP, aimbot, glow, skin changer, radar hack and more.",
-    images: ["/og.png"],
+    images: [`${SITE_URL}/og.png`],
   },
   icons: {
     icon: "/nexuslogo.png",
